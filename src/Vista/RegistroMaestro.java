@@ -6,6 +6,7 @@
 package Vista;
 
 import Clases.Conectar;
+import Login.Usuario;
 import Modulos.Maestro;
 import java.awt.Image;
 import java.io.File;
@@ -24,10 +25,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class RegistroMaestro extends javax.swing.JFrame {
     private Conectar ConexionRM = new Conectar();
+    public static Registros VRegistrosM;
+    Usuario Mod;
     /**
      * Creates new form RegistroMaestro
      */
     public RegistroMaestro() {
+        initComponents();
+    }
+    
+    public RegistroMaestro(Usuario Mod) {
+        this.Mod = Mod;
         initComponents();
     }
 
@@ -56,8 +64,8 @@ public class RegistroMaestro extends javax.swing.JFrame {
         IngreTelefonoRM = new javax.swing.JTextField();
         IngreFechaIngresoRM = new com.toedter.calendar.JDateChooser();
         BtFotoRM = new javax.swing.JToggleButton();
-        BtSalirRM = new javax.swing.JToggleButton();
-        BtRegistrarRM = new javax.swing.JToggleButton();
+        BtRegresarRM = new javax.swing.JToggleButton();
+        BtGuardarRM = new javax.swing.JToggleButton();
         RutaFotoRM = new javax.swing.JTextField();
         MostrarFotoRM = new javax.swing.JLabel();
 
@@ -123,22 +131,40 @@ public class RegistroMaestro extends javax.swing.JFrame {
             }
         });
 
-        BtSalirRM.setText("Salir");
-        BtSalirRM.addMouseListener(new java.awt.event.MouseAdapter() {
+        BtRegresarRM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48.png"))); // NOI18N
+        BtRegresarRM.setText("Regresar");
+        BtRegresarRM.setBorder(null);
+        BtRegresarRM.setBorderPainted(false);
+        BtRegresarRM.setContentAreaFilled(false);
+        BtRegresarRM.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48P.png"))); // NOI18N
+        BtRegresarRM.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48S.png"))); // NOI18N
+        BtRegresarRM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtSalirRMMouseClicked(evt);
+                BtRegresarRMMouseClicked(evt);
             }
         });
-        BtSalirRM.addActionListener(new java.awt.event.ActionListener() {
+        BtRegresarRM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtSalirRMActionPerformed(evt);
+                BtRegresarRMActionPerformed(evt);
             }
         });
 
-        BtRegistrarRM.setText("Registrar");
-        BtRegistrarRM.addActionListener(new java.awt.event.ActionListener() {
+        BtGuardarRM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48.png"))); // NOI18N
+        BtGuardarRM.setText("Guardar");
+        BtGuardarRM.setBorder(null);
+        BtGuardarRM.setBorderPainted(false);
+        BtGuardarRM.setContentAreaFilled(false);
+        BtGuardarRM.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48P.png"))); // NOI18N
+        BtGuardarRM.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48S.png"))); // NOI18N
+        BtGuardarRM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtRegistrarRMActionPerformed(evt);
+                BtGuardarRMActionPerformed(evt);
+            }
+        });
+
+        RutaFotoRM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RutaFotoRMActionPerformed(evt);
             }
         });
 
@@ -179,9 +205,9 @@ public class RegistroMaestro extends javax.swing.JFrame {
                                     .addComponent(IngreFechaIngresoRM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(RutaFotoRM)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtSalirRM)
+                                .addComponent(BtRegresarRM)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BtRegistrarRM)))
+                                .addComponent(BtGuardarRM)))
                         .addGap(37, 37, 37))))
         );
         layout.setVerticalGroup(
@@ -223,10 +249,10 @@ public class RegistroMaestro extends javax.swing.JFrame {
                     .addComponent(RutaFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(MostrarFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtRegistrarRM)
-                    .addComponent(BtSalirRM))
+                    .addComponent(BtGuardarRM)
+                    .addComponent(BtRegresarRM))
                 .addGap(8, 8, 8))
         );
 
@@ -235,12 +261,22 @@ public class RegistroMaestro extends javax.swing.JFrame {
 
     private void IngreTelefonoRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngreTelefonoRMActionPerformed
         // TODO add your handling code here:
+        IngreTelefonoRM.transferFocus();
     }//GEN-LAST:event_IngreTelefonoRMActionPerformed
 
-    private void BtSalirRMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtSalirRMMouseClicked
+    private void BtRegresarRMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegresarRMMouseClicked
         // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_BtSalirRMMouseClicked
+        
+        if(VRegistrosM == null)
+        {
+            Registros.VRegistroMaestro = null;
+            this.dispose();
+            VRegistrosM = new Registros(Mod);
+            VRegistrosM.setVisible(true);
+        }
+        
+        
+    }//GEN-LAST:event_BtRegresarRMMouseClicked
 
     private void BtFotoRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtFotoRMActionPerformed
         // TODO add your handling code here:
@@ -260,7 +296,7 @@ public class RegistroMaestro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtFotoRMActionPerformed
 
-    private void BtRegistrarRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegistrarRMActionPerformed
+    private void BtGuardarRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtGuardarRMActionPerformed
         // TODO add your handling code here:
         String NombreM = this.IngreNombreRM.getText();
         String ApellidoPM = this.IngreApellidoPaternoRM.getText();
@@ -320,7 +356,7 @@ public class RegistroMaestro extends javax.swing.JFrame {
         }
                 
         
-    }//GEN-LAST:event_BtRegistrarRMActionPerformed
+    }//GEN-LAST:event_BtGuardarRMActionPerformed
 
     private void IngreNombreRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngreNombreRMActionPerformed
         // TODO add your handling code here:
@@ -349,9 +385,14 @@ public class RegistroMaestro extends javax.swing.JFrame {
         IngreExpRM.transferFocus();
     }//GEN-LAST:event_IngreExpRMActionPerformed
 
-    private void BtSalirRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSalirRMActionPerformed
+    private void BtRegresarRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegresarRMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtSalirRMActionPerformed
+    }//GEN-LAST:event_BtRegresarRMActionPerformed
+
+    private void RutaFotoRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RutaFotoRMActionPerformed
+        // TODO add your handling code here:
+        RutaFotoRM.transferFocus();
+    }//GEN-LAST:event_RutaFotoRMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,8 +412,8 @@ public class RegistroMaestro extends javax.swing.JFrame {
     private javax.swing.JLabel ApellidoMaternoRM;
     private javax.swing.JLabel ApellidoPaternoRM;
     private javax.swing.JToggleButton BtFotoRM;
-    private javax.swing.JToggleButton BtRegistrarRM;
-    private javax.swing.JToggleButton BtSalirRM;
+    private javax.swing.JToggleButton BtGuardarRM;
+    private javax.swing.JToggleButton BtRegresarRM;
     private javax.swing.JLabel EdadRM;
     private javax.swing.JLabel ExpRM;
     private javax.swing.JLabel FechaIngresoRM;

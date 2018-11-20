@@ -137,6 +137,9 @@
           <Image iconType="3" name="/ImagenesProyecto/A&#xf1;adirUsuarioS.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtRegistroUsuarioMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtRegresarRegistrar">
       <Properties>

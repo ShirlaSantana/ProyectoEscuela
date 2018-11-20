@@ -16,7 +16,7 @@ import Login.Usuario;
 public class Menu extends javax.swing.JFrame {
     public static Registros VRegistro;
 
-    Usuario mod;
+    Usuario Mod;
     /**
      * Creates new form Menu
      */
@@ -24,20 +24,19 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Menu(Usuario mod)
+    public Menu(Usuario Mod)
     {
         initComponents();
         setLocationRelativeTo(null);
-        this.mod = mod;
-        if(mod.getIdTipo() == 1)
+        this.Mod = Mod;
+        if(Mod.getIDTipo() == 1)
+        {
+               
+        }else if(Mod.getIDTipo() == 2)
         {
             
-            
-            
-        }else if(mod.getIdTipo() == 2)
-        {
-            
-        }
+        }  
+    
     }
 
     /**
@@ -53,10 +52,11 @@ public class Menu extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         MenuLb = new javax.swing.JLabel();
         BtRegistrarMenu = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        BtConsultaMenu = new javax.swing.JButton();
         BtModificarMenu = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        BtAsistenicaMenu = new javax.swing.JButton();
         BtEliminarMenu = new javax.swing.JButton();
+        BtPagos = new javax.swing.JToggleButton();
 
         jButton1.setText("jButton1");
 
@@ -80,10 +80,10 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Consultas");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        BtConsultaMenu.setText("Consultas");
+        BtConsultaMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                BtConsultaMenuActionPerformed(evt);
             }
         });
 
@@ -95,7 +95,13 @@ public class Menu extends javax.swing.JFrame {
         BtModificarMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/ModificarP.png"))); // NOI18N
         BtModificarMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/ModificarS.png"))); // NOI18N
 
-        jButton7.setText("Asitenicas");
+        BtAsistenicaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Asistenica.png"))); // NOI18N
+        BtAsistenicaMenu.setText("Asistencias");
+        BtAsistenicaMenu.setBorder(null);
+        BtAsistenicaMenu.setBorderPainted(false);
+        BtAsistenicaMenu.setContentAreaFilled(false);
+        BtAsistenicaMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AsistenicaP.png"))); // NOI18N
+        BtAsistenicaMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AsistenicaS.png"))); // NOI18N
 
         BtEliminarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Eliminar.png"))); // NOI18N
         BtEliminarMenu.setText("Eliminar");
@@ -107,53 +113,54 @@ public class Menu extends javax.swing.JFrame {
         BtEliminarMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarP.png"))); // NOI18N
         BtEliminarMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarS.png"))); // NOI18N
 
+        BtPagos.setText("jToggleButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(125, 125, 125)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton7)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(BtRegistrarMenu)
+                    .addComponent(BtAsistenicaMenu))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MenuLb)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtRegistrarMenu)
-                                .addGap(64, 64, 64)
-                                .addComponent(BtModificarMenu)
-                                .addGap(78, 78, 78)
-                                .addComponent(BtEliminarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(225, 225, 225)
-                                .addComponent(MenuLb)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addGap(0, 84, Short.MAX_VALUE))))
+                            .addComponent(BtModificarMenu)
+                            .addComponent(BtConsultaMenu))
+                        .addGap(70, 70, 70)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BtPagos)
+                            .addComponent(BtEliminarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(16, 16, 16)
                 .addComponent(MenuLb)
-                .addGap(51, 51, 51)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtRegistrarMenu)
                     .addComponent(BtModificarMenu)
-                    .addComponent(BtEliminarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
+                    .addComponent(BtEliminarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(114, 114, 114)
-                .addComponent(jButton7)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtAsistenicaMenu)
+                    .addComponent(BtConsultaMenu)
+                    .addComponent(BtPagos))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void BtConsultaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtConsultaMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_BtConsultaMenuActionPerformed
 
     private void BtRegistrarMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegistrarMenuMouseClicked
         // TODO add your handling code here:
@@ -161,7 +168,7 @@ public class Menu extends javax.swing.JFrame {
         {
             Registros.VMenu = null;
             this.dispose();
-            VRegistro = new Registros(mod);
+            VRegistro = new Registros(Mod);
             VRegistro.setVisible(true);
         }
         
@@ -203,13 +210,14 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtAsistenicaMenu;
+    private javax.swing.JButton BtConsultaMenu;
     private javax.swing.JButton BtEliminarMenu;
     private javax.swing.JButton BtModificarMenu;
+    private javax.swing.JToggleButton BtPagos;
     private javax.swing.JButton BtRegistrarMenu;
     private javax.swing.JLabel MenuLb;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     // End of variables declaration//GEN-END:variables
 }

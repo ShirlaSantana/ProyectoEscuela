@@ -15,17 +15,17 @@ import java.util.ArrayList;
  * @author Daniel Poot
  */
 public class Alumno extends Persona {
-    private Date FechaInscripcion;
+    private java.sql.Date FechaInscripcion;
     private double CostoMensualidad;
     private double CostoInscripcion;
     private ArrayList PagosGenerales;
     private ArrayList  PagosArticulos;   
-    private int GrupoAlumno;
+    private Grupo GrupoAlumno;
     private byte[] Fotografia;
     
     
     //Constructor
-    public Alumno( Date FechaInscripcion, double CostoMensualidad, double CostoInscripcion , int GrupoAlumno, String Nombre, String ApellidoPaterno, String ApellidoMaterno, int Edad, Long NumCelular) {
+    public Alumno( java.sql.Date FechaInscripcion, double CostoMensualidad, double CostoInscripcion , Grupo GrupoAlumno, String Nombre, String ApellidoPaterno, String ApellidoMaterno, int Edad, Long NumCelular) {
         super(Nombre, ApellidoPaterno, ApellidoMaterno, Edad, NumCelular);
         this.FechaInscripcion = FechaInscripcion;
         this.CostoMensualidad = CostoMensualidad;
@@ -37,7 +37,7 @@ public class Alumno extends Persona {
     //Metodos get
     
 
-    public Date getFechaInscripcion() {
+    public java.sql.Date getFechaInscripcion() {
         return FechaInscripcion;
     }
 
@@ -58,7 +58,7 @@ public class Alumno extends Persona {
     }
 
 
-    public int getGrupoAlumno() {
+    public Grupo getGrupoAlumno() {
         return GrupoAlumno;
         
     }
@@ -68,7 +68,7 @@ public class Alumno extends Persona {
     }
     //Metodos set
 
-    public void setFechaInscripcion(Date FechaInscripcion) {
+    public void setFechaInscripcion(java.sql.Date FechaInscripcion) {
         this.FechaInscripcion = FechaInscripcion;
     }
 
@@ -92,8 +92,12 @@ public class Alumno extends Persona {
         this.PagosArticulos = PagosArticulos;
     }
 
-    public void setGrupoAlumno(int GrupoAlumno) {
+    public void setGrupoAlumno(Grupo GrupoAlumno) {
         this.GrupoAlumno = GrupoAlumno;
+    }
+
+    public void setFotografia(byte[] Fotografia) {
+        this.Fotografia = Fotografia;
     }
     
     

@@ -36,62 +36,69 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="PagoMensualidadRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="PagoInscripcionRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="FechaIngreRA" min="-2" max="-2" attributes="0"/>
-                          <Component id="BtFotoRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="IngreAPaternoRA" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="IngreAMaternoRA" min="-2" pref="151" max="-2" attributes="0"/>
-                                      <Component id="IngreEdadRA" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="ComboGrupoRA" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="IngreFechaRA" alignment="0" pref="150" max="32767" attributes="0"/>
-                                          <Component id="IngrePagoMensualRA" max="32767" attributes="0"/>
-                                          <Component id="IngrePagoInscripcionRA" max="32767" attributes="0"/>
-                                          <Component id="IngreTelefonoRA" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="IngreNombreRA" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="MostrarFotoRA" min="-2" pref="206" max="-2" attributes="0"/>
-                                  <Component id="RutaImagenRA" min="-2" pref="204" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Component id="GrupoRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="TelefonoRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="NombreRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="APaternoRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="AMaternoRA" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="EdadRA" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
               <Component id="TxtRegistroAlumno" min="-2" pref="189" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="BtSalirRA1" min="-2" pref="83" max="-2" attributes="0"/>
+              <Component id="BtRegresarRA" min="-2" pref="83" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="RegistrarRA" min="-2" pref="83" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="BtFotoRA" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="FechaIngreRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="MostrarFotoRA" min="-2" pref="206" max="-2" attributes="0"/>
+                          <Component id="RutaImagenRA" min="-2" pref="204" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="PagoMensualidadRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="PagoInscripcionRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="GrupoRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="TelefonoRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="NombreRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="APaternoRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="AMaternoRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="EdadRA" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="IngrePagoInscripcionRA" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="IngreAPaternoRA" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="IngreNombreRA" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="IngreEdadRA" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="IngreAMaternoRA" min="-2" pref="151" max="-2" attributes="0"/>
+                                          <Component id="IngreTelefonoRA" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="IngreFechaRA" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="IngrePagoMensualRA" min="-2" pref="150" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Component id="ComboGrupoRA" pref="267" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,67 +107,60 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="TxtRegistroAlumno" min="-2" pref="49" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NombreRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngreNombreRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="APaternoRA" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="IngreAPaternoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="AMaternoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngreAMaternoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="EdadRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngreEdadRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="TelefonoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngreTelefonoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="NombreRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="APaternoRA" min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="AMaternoRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="EdadRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="TelefonoRA" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="FechaIngreRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="GrupoRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PagoInscripcionRA" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="IngrePagoInscripcionRA" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PagoMensualidadRA" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="IngrePagoMensualRA" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
+                      <Component id="IngreNombreRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="IngreAPaternoRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="IngreAMaternoRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="IngreEdadRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="IngreTelefonoRA" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="IngreFechaRA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="ComboGrupoRA" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="GrupoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ComboGrupoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="PagoInscripcionRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngrePagoInscripcionRA" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="BtFotoRA" min="-2" max="-2" attributes="0"/>
+                  <Component id="RutaImagenRA" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="PagoMensualidadRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngrePagoMensualRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BtFotoRA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="RutaImagenRA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Component id="MostrarFotoRA" min="-2" pref="165" max="-2" attributes="0"/>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="RegistrarRA" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="BtSalirRA1" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="BtRegresarRA" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
@@ -213,19 +213,47 @@
     </Component>
     <Component class="javax.swing.JButton" name="RegistrarRA">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Guardar48.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Registrar"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Guardar48P.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Guardar48S.png"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegistrarRAActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BtSalirRA1">
+    <Component class="javax.swing.JButton" name="BtRegresarRA">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48P.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48S.png"/>
+        </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtSalirRA1MouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtSalirRA1ActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtRegresarRAMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtRegresarRAActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="IngreNombreRA">
@@ -262,6 +290,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="RutaImagenRA">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RutaImagenRAActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="MostrarFotoRA">
     </Component>

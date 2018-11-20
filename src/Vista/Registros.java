@@ -13,6 +13,9 @@ import Login.Usuario;
  */
 public class Registros extends javax.swing.JFrame {
     public static Menu VMenu;
+    public static RegistroAlumno VRegistroAlumno;
+    public static RegistroMaestro VRegistroMaestro;
+    public static RegistroUsuario VRegistroUsuario;
     Usuario Mod;
     /**
      * Creates new form Registros
@@ -25,10 +28,10 @@ public class Registros extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.Mod = Mod;
-        if(Mod.getIdTipo() == 1)
+        if(Mod.getIDTipo() == 1)
         {
                
-        }else if(Mod.getIdTipo() == 2)
+        }else if(Mod.getIDTipo() == 2)
         {
            BtRegistroUsuario.setVisible(false); 
         }        
@@ -90,6 +93,11 @@ public class Registros extends javax.swing.JFrame {
         BtRegistroUsuario.setContentAreaFilled(false);
         BtRegistroUsuario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AñadirUsuarioP.png"))); // NOI18N
         BtRegistroUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AñadirUsuarioS.png"))); // NOI18N
+        BtRegistroUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtRegistroUsuarioMouseClicked(evt);
+            }
+        });
 
         BtRegresarRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48.png"))); // NOI18N
         BtRegresarRegistrar.setText("Regresar");
@@ -151,14 +159,29 @@ public class Registros extends javax.swing.JFrame {
 
     private void BtRegistroAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegistroAlumnosMouseClicked
         // TODO add your handling code here:
-        new RegistroAlumno().setVisible(true);
-        this.dispose();
+        if(VRegistroAlumno == null)
+        {
+            RegistroAlumno.VRegistros = null;
+            this.dispose();
+            VRegistroAlumno = new RegistroAlumno(Mod);
+            VRegistroAlumno.setVisible(true);
+        }
+        
+        
     }//GEN-LAST:event_BtRegistroAlumnosMouseClicked
 
     private void BtRegistroMaestroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegistroMaestroMouseClicked
         // TODO add your handling code here:
-        new RegistroMaestro().setVisible(true);
-        this.dispose();
+        if(VRegistroMaestro == null)
+        {
+            RegistroMaestro.VRegistrosM = null;
+            this.dispose();
+            VRegistroMaestro = new RegistroMaestro(Mod);
+            VRegistroMaestro.setVisible(true);
+        }
+        
+        
+        
     }//GEN-LAST:event_BtRegistroMaestroMouseClicked
 
     private void BtRegresarRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegresarRegistrarMouseClicked
@@ -176,6 +199,16 @@ public class Registros extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosing
+
+    private void BtRegistroUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegistroUsuarioMouseClicked
+        // TODO add your handling code here:
+        if(VRegistroUsuario == null){
+            RegistroUsuario.VRegistroU = null;
+            this.dispose();
+            VRegistroUsuario = new RegistroUsuario(Mod);
+            VRegistroUsuario.setVisible(true);
+        }
+    }//GEN-LAST:event_BtRegistroUsuarioMouseClicked
 
     /**
      * @param args the command line arguments

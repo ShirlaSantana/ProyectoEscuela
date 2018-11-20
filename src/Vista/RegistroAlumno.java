@@ -11,6 +11,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import Clases.*;
+import Login.Usuario;
 import Modulos.Alumno;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,15 +24,27 @@ import java.util.Date;
  */
 public class RegistroAlumno extends javax.swing.JFrame {
     public Conectar ConexionRA = new Conectar();
-
+    Usuario Mod;
+    //Variables utilizadas para que las vistas cierren adecuadamente
+    public static Registros VRegistros;  //VRegistroR es un Frame de tipo Registro que es utilizada para abrir RA(true) o cerrar (false)
     /**
      * Creates new form RegistroAlumno
      */
     public RegistroAlumno() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.ComboGrupoRA.setModel(ConexionRA.Obt_Grupos());
+        Grupo ComboGrupo = new Grupo();
+        ComboGrupo.MostrarGrupos(ComboGrupoRA);
     }
+    public RegistroAlumno(Usuario Mod) {
+        this.Mod = Mod;
+        initComponents();
+        this.setLocationRelativeTo(null);
+        Grupo ComboGrupo = new Grupo();
+        ComboGrupo.MostrarGrupos(ComboGrupoRA);
+    }
+    
+    
     
     
 
@@ -54,7 +67,7 @@ public class RegistroAlumno extends javax.swing.JFrame {
         FechaIngreRA = new javax.swing.JLabel();
         GrupoRA = new javax.swing.JLabel();
         RegistrarRA = new javax.swing.JButton();
-        BtSalirRA1 = new javax.swing.JButton();
+        BtRegresarRA = new javax.swing.JButton();
         IngreNombreRA = new javax.swing.JTextField();
         IngreAPaternoRA = new javax.swing.JTextField();
         IngreAMaternoRA = new javax.swing.JTextField();
@@ -89,22 +102,34 @@ public class RegistroAlumno extends javax.swing.JFrame {
 
         GrupoRA.setText("Grupo : ");
 
+        RegistrarRA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48.png"))); // NOI18N
         RegistrarRA.setText("Registrar");
+        RegistrarRA.setBorder(null);
+        RegistrarRA.setBorderPainted(false);
+        RegistrarRA.setContentAreaFilled(false);
+        RegistrarRA.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48P.png"))); // NOI18N
+        RegistrarRA.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48S.png"))); // NOI18N
         RegistrarRA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegistrarRAActionPerformed(evt);
             }
         });
 
-        BtSalirRA1.setText("Salir");
-        BtSalirRA1.addMouseListener(new java.awt.event.MouseAdapter() {
+        BtRegresarRA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48.png"))); // NOI18N
+        BtRegresarRA.setText("Salir");
+        BtRegresarRA.setBorder(null);
+        BtRegresarRA.setBorderPainted(false);
+        BtRegresarRA.setContentAreaFilled(false);
+        BtRegresarRA.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48P.png"))); // NOI18N
+        BtRegresarRA.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48S.png"))); // NOI18N
+        BtRegresarRA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtSalirRA1MouseClicked(evt);
+                BtRegresarRAMouseClicked(evt);
             }
         });
-        BtSalirRA1.addActionListener(new java.awt.event.ActionListener() {
+        BtRegresarRA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtSalirRA1ActionPerformed(evt);
+                BtRegresarRAActionPerformed(evt);
             }
         });
 
@@ -145,6 +170,12 @@ public class RegistroAlumno extends javax.swing.JFrame {
             }
         });
 
+        RutaImagenRA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RutaImagenRAActionPerformed(evt);
+            }
+        });
+
         PagoInscripcionRA.setText("Pago de Inscripcion : ");
 
         IngrePagoInscripcionRA.addActionListener(new java.awt.event.ActionListener() {
@@ -174,105 +205,109 @@ public class RegistroAlumno extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PagoMensualidadRA)
-                    .addComponent(PagoInscripcionRA)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FechaIngreRA)
-                            .addComponent(BtFotoRA))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(120, 120, 120)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(IngreAPaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(IngreAMaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(IngreEdadRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(ComboGrupoRA, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(IngreFechaRA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                            .addComponent(IngrePagoMensualRA)
-                                            .addComponent(IngrePagoInscripcionRA)
-                                            .addComponent(IngreTelefonoRA, javax.swing.GroupLayout.Alignment.LEADING)))
-                                    .addComponent(IngreNombreRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(MostrarFotoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(RutaImagenRA, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(GrupoRA)
-                    .addComponent(TelefonoRA)
-                    .addComponent(NombreRA)
-                    .addComponent(APaternoRA)
-                    .addComponent(AMaternoRA)
-                    .addComponent(EdadRA))
-                .addContainerGap(48, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(117, 117, 117)
                 .addComponent(TxtRegistroAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtSalirRA1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtRegresarRA, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(RegistrarRA, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtFotoRA)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(FechaIngreRA)
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(MostrarFotoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RutaImagenRA, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PagoMensualidadRA)
+                            .addComponent(PagoInscripcionRA)
+                            .addComponent(GrupoRA)
+                            .addComponent(TelefonoRA)
+                            .addComponent(NombreRA)
+                            .addComponent(APaternoRA)
+                            .addComponent(AMaternoRA)
+                            .addComponent(EdadRA))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(IngrePagoInscripcionRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(IngreAPaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(IngreNombreRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(IngreEdadRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(IngreAMaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(IngreTelefonoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(IngreFechaRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(IngrePagoMensualRA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(69, 69, 69))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(ComboGrupoRA, 0, 267, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(TxtRegistroAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombreRA)
-                    .addComponent(IngreNombreRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(APaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IngreAPaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AMaternoRA)
-                    .addComponent(IngreAMaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EdadRA)
-                    .addComponent(IngreEdadRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TelefonoRA)
-                    .addComponent(IngreTelefonoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(FechaIngreRA))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(NombreRA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(APaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(IngreFechaRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GrupoRA)
-                    .addComponent(ComboGrupoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AMaternoRA)
+                        .addGap(32, 32, 32)
+                        .addComponent(EdadRA)
+                        .addGap(18, 18, 18)
+                        .addComponent(TelefonoRA)
+                        .addGap(22, 22, 22)
+                        .addComponent(FechaIngreRA)
+                        .addGap(34, 34, 34)
+                        .addComponent(GrupoRA)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PagoInscripcionRA)
+                            .addComponent(IngrePagoInscripcionRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PagoMensualidadRA)
+                            .addComponent(IngrePagoMensualRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(IngreNombreRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(IngreAPaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IngreAMaternoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(IngreEdadRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(IngreTelefonoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(IngreFechaRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ComboGrupoRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PagoInscripcionRA)
-                    .addComponent(IngrePagoInscripcionRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PagoMensualidadRA)
-                    .addComponent(IngrePagoMensualRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtFotoRA)
                     .addComponent(RutaImagenRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(52, 52, 52)
                 .addComponent(MostrarFotoRA, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RegistrarRA, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtSalirRA1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtRegresarRA, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -284,10 +319,15 @@ public class RegistroAlumno extends javax.swing.JFrame {
         IngreTelefonoRA.transferFocus();
     }//GEN-LAST:event_IngreTelefonoRAActionPerformed
 
-    private void BtSalirRA1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtSalirRA1MouseClicked
+    private void BtRegresarRAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegresarRAMouseClicked
         // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_BtSalirRA1MouseClicked
+        if(VRegistros == null){
+            Registros.VRegistroAlumno = null;
+            this.dispose();
+            VRegistros = new Registros(Mod);
+            VRegistros.setVisible(true);
+        }
+    }//GEN-LAST:event_BtRegresarRAMouseClicked
 
     private void RegistrarRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarRAActionPerformed
         // TODO add your handling code here:
@@ -305,18 +345,18 @@ public class RegistroAlumno extends javax.swing.JFrame {
         long Fecha = Date.getTime();
         java.sql.Date FechaA = new java.sql.Date(Fecha);
         ////////////////////////////////////////////////////////////////
-        Grupo GrupoA = this.ComboGrupoRA.getItemCount();
-        Long TelefonoA = Long.parseLong(this.TelefonoRA.getText());
+        Grupo NGrupoRA = new Grupo(ComboGrupoRA.getItemAt(ComboGrupoRA.getSelectedIndex()).getTipoDeGrupo(),ComboGrupoRA.getItemAt(ComboGrupoRA.getSelectedIndex()).getIDHorario(),ComboGrupoRA.getItemAt(ComboGrupoRA.getSelectedIndex()).getIDMaestro());
+        Long TelefonoA = Long.parseLong(this.IngreTelefonoRA.getText());
         ///////////////////Ingresar ruta de la foto /////////////////////////////
         
-        File RutImageA = new File(MostrarFotoRA.getText());
+        File RutImageA = new File(RutaImagenRA.getText());
         
         ////////////////////////////////////////////////////////////////////////
         Double MensualidadA = Double.parseDouble(this.IngrePagoMensualRA.getText());
         Double InscripcionA = Double.parseDouble(this.IngrePagoInscripcionRA.getText());
         
 
-        Alumno AlumnoRA = new Alumno(FechaA, MensualidadA, InscripcionA ,GrupoA, NombreA,ApellidoPA, ApellidoMA, EdadA,TelefonoA);
+        Alumno AlumnoRA = new Alumno(FechaA, MensualidadA, InscripcionA ,NGrupoRA, NombreA,ApellidoPA, ApellidoMA, EdadA,TelefonoA);
         
         PreparedStatement Pst = null;
         
@@ -327,19 +367,19 @@ public class RegistroAlumno extends javax.swing.JFrame {
             byte[] Icono = new byte[(int) RutImageA.length()];
             InputStream input = new FileInputStream(RutImageA);
             input.read(Icono);
-           // AlumnoRA.setFoto(Icono);
+            AlumnoRA.setFotografia(Icono);
             
-            Pst = ConexionRA.getConnection().prepareStatement("insert into ingresoalumno values(null,?,?,?,?,?,?,?,?,?,?)");
+            Pst = ConexionRA.getConnection().prepareStatement("insert into ingresoalumnos values(null,?,?,?,?,?,?,?,?,?,?)");
             Pst.setString(1, NombreA);
             Pst.setString(2, ApellidoPA);
             Pst.setString(3, ApellidoMA);
             Pst.setInt(4, EdadA);
             Pst.setDate(5, FechaA);
-            Pst.setInt(6, TelefonoA);
-            Pst.setBytes(7,AlumnoRA.getFoto);    //Falta poner los datos para poner la foto
+            Pst.setLong(6, TelefonoA);
+            Pst.setBytes(7,AlumnoRA.getFotografia());    
             Pst.setDouble(8, MensualidadA);
             Pst.setDouble(9,InscripcionA );
-            Pst.setString(10, "0");
+            Pst.setInt(10, NGrupoRA.getIDHorario());
             
             
             
@@ -350,9 +390,12 @@ public class RegistroAlumno extends javax.swing.JFrame {
             IngreAMaternoRA.setText("");
             IngreEdadRA.setText("");
             IngreTelefonoRA.setText("");
+            IngrePagoInscripcionRA.setText("");
+            IngrePagoMensualRA.setText("");
+            RutaImagenRA.setText("");
             
                     
-            JOptionPane.showMessageDialog(null, "Conectado");
+            JOptionPane.showMessageDialog(null, "Alumno Registrado");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Error " + e);
         }
@@ -413,9 +456,14 @@ public class RegistroAlumno extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ComboGrupoRAActionPerformed
 
-    private void BtSalirRA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSalirRA1ActionPerformed
+    private void BtRegresarRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegresarRAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtSalirRA1ActionPerformed
+    }//GEN-LAST:event_BtRegresarRAActionPerformed
+
+    private void RutaImagenRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RutaImagenRAActionPerformed
+        // TODO add your handling code here:
+        RutaImagenRA.transferFocus();
+    }//GEN-LAST:event_RutaImagenRAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -456,7 +504,7 @@ public class RegistroAlumno extends javax.swing.JFrame {
     private javax.swing.JLabel AMaternoRA;
     private javax.swing.JLabel APaternoRA;
     private javax.swing.JButton BtFotoRA;
-    private javax.swing.JButton BtSalirRA1;
+    private javax.swing.JButton BtRegresarRA;
     private javax.swing.JComboBox<Grupo> ComboGrupoRA;
     private javax.swing.JLabel EdadRA;
     private javax.swing.JLabel FechaIngreRA;

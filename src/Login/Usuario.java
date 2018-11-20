@@ -5,6 +5,10 @@
  */
 package Login;
 
+import Clases.Conectar;
+import java.sql.ResultSet;
+import javax.swing.JComboBox;
+
 /**
  *
  * @author Daniel Poot
@@ -14,8 +18,24 @@ public class Usuario {
     private String Usuario;
     private String Password;
     private String Last_session;
-    private int IdTipo;
+    private int IDTipo;
     private String TipoUsuario;
+
+    public Usuario(int IDTipo,String TipoUsuario ) {
+        this.IDTipo=IDTipo;
+        this.TipoUsuario = TipoUsuario;
+                
+    }
+    
+    public Usuario(String Usuario,String Password,int IDTipo,String TipoUsuario ) {
+        this.Usuario = Usuario;
+        this.Password = Password;
+        this.IDTipo=IDTipo;
+        this.TipoUsuario = TipoUsuario;            
+    }
+
+    public Usuario() {
+    }
 
     public int getID() {
         return ID;
@@ -49,12 +69,12 @@ public class Usuario {
         this.Last_session = Last_session;
     }
 
-    public int getIdTipo() {
-        return IdTipo;
+    public int getIDTipo() {
+        return IDTipo;
     }
 
-    public void setIdTipo(int IdTipo) {
-        this.IdTipo = IdTipo;
+    public void setIdTipo(int IDTipo) {
+        this.IDTipo = IDTipo;
     }
 
     public String getTipoUsuario() {
@@ -65,6 +85,24 @@ public class Usuario {
         this.TipoUsuario = TipoUsuario;
     }
     
+    
+    public void MostrarUsuario(JComboBox<Usuario> ComboUsuarioRU) {
+        try{
+            Conectar ConexionUsuario = new Conectar();
+            ResultSet Res = ConexionUsuario.consulta("Select IDTipoUsuarioU,TipoDeUsuario FROM usuario U,tipousuario T WHERE U.IDTipoUsuarioU=T.IDTipoUsuario");
+            while(Res.next()){
+            ComboUsuarioRU.addItem(new Usuario(Res.getInt("IDTipoUsuarioU"), Res.getString("TipoDeUsuario")));
+            }
+        }catch(Exception Ex){
+            System.err.println(Ex.getMessage());
+        }
+         
+    }
+
+    @Override
+    public String toString() {
+        return  getTipoUsuario() ;
+    }
     
     
 

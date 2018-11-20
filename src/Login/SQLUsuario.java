@@ -32,7 +32,7 @@ public class SQLUsuario extends Conectar{
             
             PsR.setString(1, usr.getUsuario());
             PsR.setString(2, usr.getPassword());
-            PsR.setInt(3, usr.getIdTipo());
+            PsR.setInt(3, usr.getIDTipo());
             PsR.execute();
             return true;
         } catch (SQLException e) {

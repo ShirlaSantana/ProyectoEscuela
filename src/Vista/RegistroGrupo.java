@@ -61,6 +61,12 @@ public class RegistroGrupo extends javax.swing.JFrame {
 
         TipoGrupoRG.setText("Tipo de grupo : ");
 
+        ingreTipoGrupoRG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingreTipoGrupoRGActionPerformed(evt);
+            }
+        });
+
         HorarioRG.setText("Horario : ");
 
         MestroRG.setText("Maestro  :");
@@ -137,6 +143,11 @@ public class RegistroGrupo extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, ComboHorarioRG.getItemAt(ComboHorarioRG.getSelectedIndex()).getDia());
     }//GEN-LAST:event_BtRegistrarRGActionPerformed
+
+    private void ingreTipoGrupoRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingreTipoGrupoRGActionPerformed
+        // TODO add your handling code here:
+        ingreTipoGrupoRG.transferFocus();
+    }//GEN-LAST:event_ingreTipoGrupoRGActionPerformed
 
     /**
      * @param args the command line arguments

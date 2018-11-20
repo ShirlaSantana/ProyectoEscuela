@@ -60,6 +60,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         IngresaPassword.setText("Password");
+        IngresaPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresaPasswordActionPerformed(evt);
+            }
+        });
 
         BtSalirLogin.setText("Salir");
         BtSalirLogin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,6 +138,7 @@ public class Login extends javax.swing.JFrame {
 
     private void IngresaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaUsuarioActionPerformed
         // TODO add your handling code here:
+        IngresaUsuario.transferFocus();
     }//GEN-LAST:event_IngresaUsuarioActionPerformed
 
     private void BtSalirLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtSalirLoginMouseClicked
@@ -174,6 +180,10 @@ public class Login extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_BtIngresarLoginActionPerformed
+
+    private void IngresaPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IngresaPasswordActionPerformed
 
     /**
      * @param args the command line arguments
