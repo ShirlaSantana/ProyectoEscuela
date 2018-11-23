@@ -23,31 +23,57 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-              <Component id="BtEliminarAlumno" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="109" max="32767" attributes="0"/>
-              <Component id="BtEliminarMaestro" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="BtEliminarHorario" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtEliminarAlumno" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="BtEliminarGrupo" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtEliminarMaestro" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-              <Component id="BtEliminarUsuario" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="BtRegresarEliminar" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtEliminarUsuario" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BtEliminarAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtEliminarMaestro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="98" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtEliminarHorario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtEliminarGrupo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Component id="BtEliminarUsuario" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+              <Component id="BtRegresarEliminar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,17 +81,128 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="BtEliminarAlumno">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarAlumno.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Alumno"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarAlumnoP.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarAlumnoS.png"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="BtEliminarMaestro">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarMeaestro.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Mestro"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarMeaestroP.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarMeaestroS.png"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="BtEliminarUsuario">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarUsuario.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Usuario"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarUsuarioP.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarUsuarioS.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtEliminarHorario">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarHorario.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Horario"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarHorarioP.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarHorarioS.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtEliminarGrupo">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarGrupo.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Grupo"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarGrupoP.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/EliminarGrupoS.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtRegresarEliminar">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Regresar"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48P.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48S.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtRegresarEliminarMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtRegresarEliminarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="48" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
     </Component>
   </SubComponents>

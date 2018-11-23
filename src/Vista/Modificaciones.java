@@ -5,17 +5,25 @@
  */
 package Vista;
 
+import Login.Usuario;
+
 /**
  *
  * @author Daniel Poot
  */
 public class Modificaciones extends javax.swing.JFrame {
-
+    public static Menu VMenuModificar;
+    Usuario Mod;
     /**
      * Creates new form Registros
      */
     public Modificaciones() {
         initComponents();
+    }
+
+    public Modificaciones(Usuario Mod) {
+        initComponents();
+        this.Mod = Mod;
     }
 
     /**
@@ -31,6 +39,9 @@ public class Modificaciones extends javax.swing.JFrame {
         BtModificarMaestro = new javax.swing.JButton();
         BtModificarUsuario = new javax.swing.JButton();
         BtModificarModificar = new javax.swing.JLabel();
+        BtMoficarHorario = new javax.swing.JButton();
+        BtModificarGrupo = new javax.swing.JButton();
+        BtRegresarModificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +52,23 @@ public class Modificaciones extends javax.swing.JFrame {
         BtModificarUsuario.setText("Usuario");
 
         BtModificarModificar.setText("Modificar");
+
+        BtMoficarHorario.setText("Horario");
+
+        BtModificarGrupo.setText("Grupo");
+
+        BtRegresarModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48.png"))); // NOI18N
+        BtRegresarModificar.setText("Regresar");
+        BtRegresarModificar.setBorder(null);
+        BtRegresarModificar.setBorderPainted(false);
+        BtRegresarModificar.setContentAreaFilled(false);
+        BtRegresarModificar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48P.png"))); // NOI18N
+        BtRegresarModificar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48S.png"))); // NOI18N
+        BtRegresarModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtRegresarModificarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,11 +83,18 @@ public class Modificaciones extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(BtModificarUsuario))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(167, 167, 167)
-                        .addComponent(BtModificarModificar)))
+                        .addComponent(BtModificarModificar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(BtMoficarHorario)
+                        .addGap(74, 74, 74)
+                        .addComponent(BtModificarGrupo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BtRegresarModificar)
+                            .addComponent(BtModificarUsuario))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -71,13 +106,29 @@ public class Modificaciones extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtModificarAlumno)
                     .addComponent(BtModificarMaestro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGap(94, 94, 94)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtMoficarHorario)
+                    .addComponent(BtModificarGrupo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
                 .addComponent(BtModificarUsuario)
-                .addGap(92, 92, 92))
+                .addGap(86, 86, 86)
+                .addComponent(BtRegresarModificar)
+                .addGap(17, 17, 17))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtRegresarModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegresarModificarMouseClicked
+        // TODO add your handling code here:
+        if(VMenuModificar == null){
+            Menu.VModificar = null;
+            VMenuModificar = new Menu(Mod);
+            VMenuModificar.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtRegresarModificarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -117,8 +168,11 @@ public class Modificaciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtModificarAlumno;
+    private javax.swing.JButton BtModificarGrupo;
     private javax.swing.JButton BtModificarMaestro;
     private javax.swing.JLabel BtModificarModificar;
     private javax.swing.JButton BtModificarUsuario;
+    private javax.swing.JButton BtMoficarHorario;
+    private javax.swing.JButton BtRegresarModificar;
     // End of variables declaration//GEN-END:variables
 }

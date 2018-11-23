@@ -32,13 +32,22 @@
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-                      <Component id="BtModificarUsuario" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                       <Component id="BtModificarModificar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                      <Component id="BtMoficarHorario" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <Component id="BtModificarGrupo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="BtRegresarModificar" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtModificarUsuario" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -55,9 +64,16 @@
                   <Component id="BtModificarAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtModificarMaestro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtMoficarHorario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtModificarGrupo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="183" max="32767" attributes="0"/>
               <Component id="BtModificarUsuario" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+              <Component id="BtRegresarModificar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,6 +98,38 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtMoficarHorario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Horario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtModificarGrupo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Grupo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtRegresarModificar">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Regresar"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48P.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48S.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtRegresarModificarMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

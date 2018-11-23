@@ -9,7 +9,9 @@ package Modulos;
 import Clases.*;
 import java.awt.Image;
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 /**
  *
  * @author Daniel Poot
@@ -22,6 +24,7 @@ public class Alumno extends Persona {
     private ArrayList  PagosArticulos;   
     private Grupo GrupoAlumno;
     private byte[] Fotografia;
+    private int ID;
     
     
     //Constructor
@@ -32,9 +35,17 @@ public class Alumno extends Persona {
         this.CostoInscripcion = CostoInscripcion;
         this.GrupoAlumno = GrupoAlumno;
     }
-    
+
+    public Alumno(String Nombre, String ApellidoPaterno, String ApellidoMaterno, int ID) {
+        super(Nombre, ApellidoPaterno, ApellidoMaterno);
+        this.ID = ID;
+    }
 
     //Metodos get
+
+    public Alumno() {
+    }
+    
     
 
     public java.sql.Date getFechaInscripcion() {
@@ -66,6 +77,12 @@ public class Alumno extends Persona {
     public byte[] getFotografia() {
         return Fotografia;
     }
+
+    public int getID() {
+        return ID;
+    }
+    
+    
     //Metodos set
 
     public void setFechaInscripcion(java.sql.Date FechaInscripcion) {
@@ -99,13 +116,30 @@ public class Alumno extends Persona {
     public void setFotografia(byte[] Fotografia) {
         this.Fotografia = Fotografia;
     }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
     
     
+    public void MostrarAlumnos(JComboBox<Alumno> ComboAlumnosRA) {
+        try{
+            Conectar ConexionHorarios = new Conectar();
+            ResultSet Res = ConexionHorarios.consulta("Select * FROM ingresoalumnos ");
+            while(Res.next()){
+            ComboAlumnosRA.addItem(new Alumno(Res.getString("Nombre"), Res.getString("ApellidoPaterno"), Res.getString("ApellidoMaterno"), Res.getInt("IDAlumno")));
+            }
+        }catch(Exception Ex){
+            System.err.println(Ex.getMessage());
+        }
+         
+    }
+    
+   
 
     @Override
     public String toString() {
-        return super.toString() + "\nFecha Inscripcio:" + getFechaInscripcion() +"\nMensualidad: "+ getCostoMensualidad() + "\nCosto de Inscripcion:"+ getCostoInscripcion()+ "\nGrupo del Alumno: " + getGrupoAlumno()
-                +"\nPagos: " + getPagosGenerales() + "\nPago de Articulos: " + getPagosArticulos()  ;
+        return super.getNombre() + " " + super.getApellidoPaterno() + " " + super.getApellidoMaterno();
     }
     
     

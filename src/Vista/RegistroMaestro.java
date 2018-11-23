@@ -124,7 +124,13 @@ public class RegistroMaestro extends javax.swing.JFrame {
             }
         });
 
+        BtFotoRM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AñadirFoto48.png"))); // NOI18N
         BtFotoRM.setText("Foto");
+        BtFotoRM.setBorder(null);
+        BtFotoRM.setBorderPainted(false);
+        BtFotoRM.setContentAreaFilled(false);
+        BtFotoRM.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AñadirFotoP48.png"))); // NOI18N
+        BtFotoRM.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AñadirFotoS48.png"))); // NOI18N
         BtFotoRM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtFotoRMActionPerformed(evt);
@@ -178,37 +184,38 @@ public class RegistroMaestro extends javax.swing.JFrame {
                 .addGap(104, 104, 104))
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(MostrarFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ExpRM)
+                            .addComponent(TelefonoRM)
+                            .addComponent(FechaIngresoRM)
+                            .addComponent(EdadRM)
+                            .addComponent(ApellidoMaternoRM)
+                            .addComponent(ApellidoPaternoRM)
+                            .addComponent(NombreRM)
+                            .addComponent(BtFotoRM))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(IngreNombreRM)
+                                .addComponent(IngreApellidoPaternoRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                .addComponent(IngreApellidoMaternoRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                .addComponent(IngreEdadRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                .addComponent(IngreExpRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                .addComponent(IngreTelefonoRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                .addComponent(IngreFechaIngresoRM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(RutaFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ExpRM)
-                                    .addComponent(TelefonoRM)
-                                    .addComponent(FechaIngresoRM)
-                                    .addComponent(EdadRM)
-                                    .addComponent(ApellidoMaternoRM)
-                                    .addComponent(ApellidoPaternoRM)
-                                    .addComponent(NombreRM)
-                                    .addComponent(BtFotoRM))
-                                .addGap(60, 76, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(IngreNombreRM)
-                                    .addComponent(IngreApellidoPaternoRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                    .addComponent(IngreApellidoMaternoRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                    .addComponent(IngreEdadRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                    .addComponent(IngreExpRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                    .addComponent(IngreTelefonoRM, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                    .addComponent(IngreFechaIngresoRM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(RutaFotoRM)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtRegresarRM)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BtGuardarRM)))
-                        .addGap(37, 37, 37))))
+                        .addComponent(BtRegresarRM)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtGuardarRM)
+                        .addGap(17, 17, 17)))
+                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(MostrarFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,9 +254,9 @@ public class RegistroMaestro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtFotoRM)
                     .addComponent(RutaFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(MostrarFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MostrarFotoRM, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtGuardarRM)
                     .addComponent(BtRegresarRM))
@@ -291,7 +298,7 @@ public class RegistroMaestro extends javax.swing.JFrame {
             
             Image FotoAlumno = getToolkit().getImage(RutaFotoRM.getText());
             
-            FotoAlumno = FotoAlumno.getScaledInstance(90, 50, Image.SCALE_DEFAULT);
+            FotoAlumno = FotoAlumno.getScaledInstance(200, 250, Image.SCALE_DEFAULT);
             MostrarFotoRM.setIcon(new ImageIcon(FotoAlumno));
         }
     }//GEN-LAST:event_BtFotoRMActionPerformed

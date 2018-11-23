@@ -139,6 +139,9 @@
           <Image iconType="3" name="/ImagenesProyecto/ModificarS.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtModificarMenuMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtAsistenicaMenu">
       <Properties>
@@ -158,6 +161,9 @@
           <Image iconType="3" name="/ImagenesProyecto/AsistenicaS.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtAsistenicaMenuMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtEliminarMenu">
       <Properties>
@@ -183,6 +189,9 @@
           <Image iconType="3" name="/ImagenesProyecto/EliminarS.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtEliminarMenuMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="BtPagos">
       <Properties>

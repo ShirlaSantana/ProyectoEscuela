@@ -16,6 +16,9 @@ public class Registros extends javax.swing.JFrame {
     public static RegistroAlumno VRegistroAlumno;
     public static RegistroMaestro VRegistroMaestro;
     public static RegistroUsuario VRegistroUsuario;
+    public static RegistroGrupo VRegistroGrupo;
+    public static RegistroHorario VRegistroHorario;
+    
     Usuario Mod;
     /**
      * Creates new form Registros
@@ -33,7 +36,9 @@ public class Registros extends javax.swing.JFrame {
                
         }else if(Mod.getIDTipo() == 2)
         {
-           BtRegistroUsuario.setVisible(false); 
+           BtRegistroHorario.setVisible(false);
+           BtRegistroUsuario.setVisible(false);
+           BtRegistroGrupo.setVisible(false);
         }        
     }
 
@@ -51,6 +56,8 @@ public class Registros extends javax.swing.JFrame {
         BtRegistroUsuario = new javax.swing.JButton();
         BtRegresarRegistrar = new javax.swing.JButton();
         RegistrarR = new javax.swing.JLabel();
+        BtRegistroHorario = new javax.swing.JButton();
+        BtRegistroGrupo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -115,21 +122,38 @@ public class Registros extends javax.swing.JFrame {
         RegistrarR.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         RegistrarR.setText("Registrar");
 
+        BtRegistroHorario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/RegistrarHorario.png"))); // NOI18N
+        BtRegistroHorario.setText("Horario");
+        BtRegistroHorario.setBorder(null);
+        BtRegistroHorario.setBorderPainted(false);
+        BtRegistroHorario.setContentAreaFilled(false);
+        BtRegistroHorario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/RegistrarHorarioP.png"))); // NOI18N
+        BtRegistroHorario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/RegistrarHorarioS.png"))); // NOI18N
+        BtRegistroHorario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtRegistroHorarioMouseClicked(evt);
+            }
+        });
+
+        BtRegistroGrupo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/RegistrarGrupo.png"))); // NOI18N
+        BtRegistroGrupo.setText("Grupo");
+        BtRegistroGrupo.setBorder(null);
+        BtRegistroGrupo.setBorderPainted(false);
+        BtRegistroGrupo.setContentAreaFilled(false);
+        BtRegistroGrupo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/RegistrarGrupoP.png"))); // NOI18N
+        BtRegistroGrupo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/RegistrarGrupoS.png"))); // NOI18N
+        BtRegistroGrupo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtRegistroGrupoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtRegistroAlumnos)
-                .addGap(18, 18, 18)
-                .addComponent(BtRegistroMaestro)
-                .addGap(66, 66, 66))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(BtRegistroUsuario))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(RegistrarR))
@@ -137,6 +161,24 @@ public class Registros extends javax.swing.JFrame {
                         .addGap(125, 125, 125)
                         .addComponent(BtRegresarRegistrar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(BtRegistroUsuario)
+                        .addGap(112, 112, 112))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(BtRegistroHorario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtRegistroGrupo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BtRegistroAlumnos)
+                                .addGap(18, 18, 18)
+                                .addComponent(BtRegistroMaestro)))
+                        .addGap(66, 66, 66))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,9 +189,13 @@ public class Registros extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtRegistroAlumnos)
                     .addComponent(BtRegistroMaestro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(97, 97, 97)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtRegistroHorario)
+                    .addComponent(BtRegistroGrupo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(BtRegistroUsuario)
-                .addGap(44, 44, 44)
+                .addGap(58, 58, 58)
                 .addComponent(BtRegresarRegistrar)
                 .addGap(29, 29, 29))
         );
@@ -210,6 +256,26 @@ public class Registros extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtRegistroUsuarioMouseClicked
 
+    private void BtRegistroHorarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegistroHorarioMouseClicked
+        // TODO add your handling code here:
+        if(VRegistroHorario == null){
+            RegistroHorario.VRegistroRH = null;
+            this.dispose();
+            VRegistroHorario = new RegistroHorario(Mod);
+            VRegistroHorario.setVisible(true);
+        }
+    }//GEN-LAST:event_BtRegistroHorarioMouseClicked
+
+    private void BtRegistroGrupoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegistroGrupoMouseClicked
+        // TODO add your handling code here:
+        if(VRegistroGrupo == null){
+            RegistroGrupo.VRegistroRG = null;
+            this.dispose();
+            VRegistroGrupo = new RegistroGrupo(Mod);
+            VRegistroGrupo.setVisible(true);
+        }        
+    }//GEN-LAST:event_BtRegistroGrupoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -246,6 +312,8 @@ public class Registros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtRegistroAlumnos;
+    private javax.swing.JButton BtRegistroGrupo;
+    private javax.swing.JButton BtRegistroHorario;
     private javax.swing.JButton BtRegistroMaestro;
     private javax.swing.JButton BtRegistroUsuario;
     private javax.swing.JButton BtRegresarRegistrar;

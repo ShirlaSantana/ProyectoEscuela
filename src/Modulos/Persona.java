@@ -27,6 +27,13 @@ public class Persona {
     public Persona() {
     }
 
+    public Persona(String Nombre, String ApellidoPaterno, String ApellidoMaterno) {
+        this.Nombre = Nombre;
+        this.ApellidoPaterno = ApellidoPaterno;
+        this.ApellidoMaterno = ApellidoMaterno;
+    }
+
+    
     public Persona(String Nombre, String ApellidoPaterno, String ApellidoMaterno, int Edad, Long NumCelular) {
         this.Nombre = Nombre;
         this.ApellidoPaterno = ApellidoPaterno;

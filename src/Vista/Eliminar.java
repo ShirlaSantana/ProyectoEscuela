@@ -5,17 +5,25 @@
  */
 package Vista;
 
+import Login.Usuario;
+
 /**
  *
  * @author Daniel Poot
  */
 public class Eliminar extends javax.swing.JFrame {
-
+    public static Menu VMenuEliminar;
+    Usuario Mod;
     /**
      * Creates new form Registros
      */
     public Eliminar() {
         initComponents();
+    }
+    
+    public Eliminar(Usuario Mod) {
+        initComponents();
+        this.Mod = Mod;
     }
 
     /**
@@ -30,44 +38,136 @@ public class Eliminar extends javax.swing.JFrame {
         BtEliminarAlumno = new javax.swing.JButton();
         BtEliminarMaestro = new javax.swing.JButton();
         BtEliminarUsuario = new javax.swing.JButton();
+        BtEliminarHorario = new javax.swing.JButton();
+        BtEliminarGrupo = new javax.swing.JButton();
+        BtRegresarEliminar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        BtEliminarAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarAlumno.png"))); // NOI18N
         BtEliminarAlumno.setText("Alumno");
+        BtEliminarAlumno.setBorder(null);
+        BtEliminarAlumno.setBorderPainted(false);
+        BtEliminarAlumno.setContentAreaFilled(false);
+        BtEliminarAlumno.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarAlumnoP.png"))); // NOI18N
+        BtEliminarAlumno.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarAlumnoS.png"))); // NOI18N
 
+        BtEliminarMaestro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarMeaestro.png"))); // NOI18N
         BtEliminarMaestro.setText("Mestro");
+        BtEliminarMaestro.setBorder(null);
+        BtEliminarMaestro.setBorderPainted(false);
+        BtEliminarMaestro.setContentAreaFilled(false);
+        BtEliminarMaestro.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarMeaestroP.png"))); // NOI18N
+        BtEliminarMaestro.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarMeaestroS.png"))); // NOI18N
 
+        BtEliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarUsuario.png"))); // NOI18N
         BtEliminarUsuario.setText("Usuario");
+        BtEliminarUsuario.setBorder(null);
+        BtEliminarUsuario.setBorderPainted(false);
+        BtEliminarUsuario.setContentAreaFilled(false);
+        BtEliminarUsuario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarUsuarioP.png"))); // NOI18N
+        BtEliminarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarUsuarioS.png"))); // NOI18N
+
+        BtEliminarHorario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarHorario.png"))); // NOI18N
+        BtEliminarHorario.setText("Horario");
+        BtEliminarHorario.setBorder(null);
+        BtEliminarHorario.setBorderPainted(false);
+        BtEliminarHorario.setContentAreaFilled(false);
+        BtEliminarHorario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarHorarioP.png"))); // NOI18N
+        BtEliminarHorario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarHorarioS.png"))); // NOI18N
+
+        BtEliminarGrupo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarGrupo.png"))); // NOI18N
+        BtEliminarGrupo.setText("Grupo");
+        BtEliminarGrupo.setBorder(null);
+        BtEliminarGrupo.setBorderPainted(false);
+        BtEliminarGrupo.setContentAreaFilled(false);
+        BtEliminarGrupo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarGrupoP.png"))); // NOI18N
+        BtEliminarGrupo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarGrupoS.png"))); // NOI18N
+
+        BtRegresarEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48.png"))); // NOI18N
+        BtRegresarEliminar.setText("Regresar");
+        BtRegresarEliminar.setBorder(null);
+        BtRegresarEliminar.setBorderPainted(false);
+        BtRegresarEliminar.setContentAreaFilled(false);
+        BtRegresarEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48P.png"))); // NOI18N
+        BtRegresarEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48S.png"))); // NOI18N
+        BtRegresarEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtRegresarEliminarMouseClicked(evt);
+            }
+        });
+        BtRegresarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtRegresarEliminarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel1.setText("Eliminar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(BtEliminarAlumno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                .addComponent(BtEliminarMaestro)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtEliminarHorario)
+                    .addComponent(BtEliminarAlumno))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtEliminarGrupo)
+                    .addComponent(BtEliminarMaestro))
                 .addGap(89, 89, 89))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(BtEliminarUsuario)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BtRegresarEliminar)
+                            .addComponent(BtEliminarUsuario))
+                        .addGap(153, 153, 153))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(130, 130, 130))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtEliminarAlumno)
                     .addComponent(BtEliminarMaestro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtEliminarHorario)
+                    .addComponent(BtEliminarGrupo))
+                .addGap(60, 60, 60)
                 .addComponent(BtEliminarUsuario)
-                .addGap(92, 92, 92))
+                .addGap(105, 105, 105)
+                .addComponent(BtRegresarEliminar)
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtRegresarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegresarEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtRegresarEliminarActionPerformed
+
+    private void BtRegresarEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtRegresarEliminarMouseClicked
+        // TODO add your handling code here:
+        if(VMenuEliminar == null){
+            Menu.VEliminar = null;
+            VMenuEliminar = new Menu(Mod);
+            VMenuEliminar.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtRegresarEliminarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -107,7 +207,11 @@ public class Eliminar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtEliminarAlumno;
+    private javax.swing.JButton BtEliminarGrupo;
+    private javax.swing.JButton BtEliminarHorario;
     private javax.swing.JButton BtEliminarMaestro;
     private javax.swing.JButton BtEliminarUsuario;
+    private javax.swing.JButton BtRegresarEliminar;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

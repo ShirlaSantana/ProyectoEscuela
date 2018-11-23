@@ -29,19 +29,8 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="BtRegistroAlumnos" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="BtRegistroMaestro" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                      <Component id="BtRegistroUsuario" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                       <Component id="RegistrarR" min="-2" max="-2" attributes="0"/>
@@ -52,6 +41,31 @@
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="BtRegistroUsuario" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="BtRegistroHorario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="BtRegistroGrupo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="BtRegistroAlumnos" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="BtRegistroMaestro" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,9 +79,14 @@
                   <Component id="BtRegistroAlumnos" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtRegistroMaestro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtRegistroHorario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtRegistroGrupo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
               <Component id="BtRegistroUsuario" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               <Component id="BtRegresarRegistrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
           </Group>
@@ -170,6 +189,50 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Registrar"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtRegistroHorario">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/RegistrarHorario.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Horario"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/RegistrarHorarioP.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/RegistrarHorarioS.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtRegistroHorarioMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtRegistroGrupo">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/RegistrarGrupo.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Grupo"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/RegistrarGrupoP.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/RegistrarGrupoS.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtRegistroGrupoMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

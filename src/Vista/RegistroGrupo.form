@@ -27,34 +27,32 @@
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="BtSalirRG" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="BtRegistrarRG" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtRegresarRG" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+                      <Component id="BtGuardarRG" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RegistroGrupo" min="-2" max="-2" attributes="0"/>
+                          <Component id="HorarioRG" alignment="1" max="32767" attributes="0"/>
+                          <Component id="TipoGrupoRG" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="HorarioRG" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
-                                      <Component id="TipoGrupoRG" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="MestroRG" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="ComboMaestroRG" alignment="0" pref="220" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="ingreTipoGrupoRG" min="-2" pref="138" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="ComboHorarioRG" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="MestroRG" max="32767" attributes="0"/>
+                              <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ComboMaestroRG" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
+                              <Component id="ingreTipoGrupoRG" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="ComboHorarioRG" alignment="0" max="32767" attributes="0"/>
+                          <Component id="RegistroGrupo" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -64,26 +62,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="RegistroGrupo" min="-2" pref="53" max="-2" attributes="0"/>
+              <Component id="RegistroGrupo" pref="53" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="TipoGrupoRG" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="ingreTipoGrupoRG" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="HorarioRG" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ComboHorarioRG" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="MestroRG" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ComboMaestroRG" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="80" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BtSalirRG" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtRegistrarRG" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtRegresarRG" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtGuardarRG" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
@@ -96,7 +94,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Regitro de grupo"/>
+        <Property name="text" type="java.lang.String" value="Registro de grupo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="TipoGrupoRG">
@@ -124,17 +122,48 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Maestro&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="BtSalirRG">
+    <Component class="javax.swing.JToggleButton" name="BtRegresarRG">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Salir"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="BtRegistrarRG">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Registrar"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Regresar"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48P.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Salir48S.png"/>
+        </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtRegistrarRGActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtRegresarRGMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="BtGuardarRG">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Guardar48.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Guardar"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Guardar48P.png"/>
+        </Property>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesProyecto/Guardar48S.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtGuardarRGActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="ComboHorarioRG">

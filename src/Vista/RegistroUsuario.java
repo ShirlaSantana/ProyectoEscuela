@@ -67,14 +67,26 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         jLabel1.setText("Registro de Usuario");
 
+        BtRegresarRU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48.png"))); // NOI18N
         BtRegresarRU.setText("Regresar");
+        BtRegresarRU.setBorder(null);
+        BtRegresarRU.setBorderPainted(false);
+        BtRegresarRU.setContentAreaFilled(false);
+        BtRegresarRU.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48P.png"))); // NOI18N
+        BtRegresarRU.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48S.png"))); // NOI18N
         BtRegresarRU.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BtRegresarRUMouseClicked(evt);
             }
         });
 
+        BtGuardarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48.png"))); // NOI18N
         BtGuardarUsuario.setText("Guardar");
+        BtGuardarUsuario.setBorder(null);
+        BtGuardarUsuario.setBorderPainted(false);
+        BtGuardarUsuario.setContentAreaFilled(false);
+        BtGuardarUsuario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48P.png"))); // NOI18N
+        BtGuardarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Guardar48S.png"))); // NOI18N
         BtGuardarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BtGuardarUsuarioMouseClicked(evt);
@@ -133,7 +145,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboUsuarioRU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TipoUsuarioRU))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtRegresarRU)
                     .addComponent(BtGuardarUsuario))

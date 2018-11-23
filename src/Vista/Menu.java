@@ -15,7 +15,10 @@ import Login.Usuario;
  */
 public class Menu extends javax.swing.JFrame {
     public static Registros VRegistro;
-
+    public static VAsistencia VAsistencias;
+    public static Eliminar VEliminar;
+    public static Modificaciones VModificar;
+    
     Usuario Mod;
     /**
      * Creates new form Menu
@@ -29,14 +32,6 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.Mod = Mod;
-        if(Mod.getIDTipo() == 1)
-        {
-               
-        }else if(Mod.getIDTipo() == 2)
-        {
-            
-        }  
-    
     }
 
     /**
@@ -94,6 +89,11 @@ public class Menu extends javax.swing.JFrame {
         BtModificarMenu.setContentAreaFilled(false);
         BtModificarMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/ModificarP.png"))); // NOI18N
         BtModificarMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/ModificarS.png"))); // NOI18N
+        BtModificarMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtModificarMenuMouseClicked(evt);
+            }
+        });
 
         BtAsistenicaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Asistenica.png"))); // NOI18N
         BtAsistenicaMenu.setText("Asistencias");
@@ -102,6 +102,11 @@ public class Menu extends javax.swing.JFrame {
         BtAsistenicaMenu.setContentAreaFilled(false);
         BtAsistenicaMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AsistenicaP.png"))); // NOI18N
         BtAsistenicaMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/AsistenicaS.png"))); // NOI18N
+        BtAsistenicaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtAsistenicaMenuMouseClicked(evt);
+            }
+        });
 
         BtEliminarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Eliminar.png"))); // NOI18N
         BtEliminarMenu.setText("Eliminar");
@@ -112,6 +117,11 @@ public class Menu extends javax.swing.JFrame {
         BtEliminarMenu.setMinimumSize(new java.awt.Dimension(96, 96));
         BtEliminarMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarP.png"))); // NOI18N
         BtEliminarMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/EliminarS.png"))); // NOI18N
+        BtEliminarMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtEliminarMenuMouseClicked(evt);
+            }
+        });
 
         BtPagos.setText("jToggleButton1");
 
@@ -173,6 +183,37 @@ public class Menu extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_BtRegistrarMenuMouseClicked
+
+    private void BtAsistenicaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtAsistenicaMenuMouseClicked
+        // TODO add your handling code here:
+        if(VAsistencias == null){
+            VAsistencia.VMenuAsistencia = null;
+            VAsistencias = new VAsistencia(Mod);
+            VAsistencias.setVisible(true);
+            this.dispose();
+        }
+        
+    }//GEN-LAST:event_BtAsistenicaMenuMouseClicked
+
+    private void BtEliminarMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtEliminarMenuMouseClicked
+        // TODO add your handling code here:
+        if(VEliminar == null){
+            Eliminar.VMenuEliminar = null;
+            VEliminar = new Eliminar(Mod);
+            VEliminar.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtEliminarMenuMouseClicked
+
+    private void BtModificarMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtModificarMenuMouseClicked
+    // TODO add your handling code here:
+        if(VModificar == null){
+            Modificaciones.VMenuModificar = null;
+            VModificar = new Modificaciones(Mod);
+            VModificar.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtModificarMenuMouseClicked
 
     /**
      * @param args the command line arguments
