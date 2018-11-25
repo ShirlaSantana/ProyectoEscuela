@@ -63,6 +63,11 @@ public class Login extends javax.swing.JFrame {
         IngresaPassword.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         IngresaPassword.setText("Password");
         IngresaPassword.setToolTipText("");
+        IngresaPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IngresaPasswordMouseClicked(evt);
+            }
+        });
         IngresaPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IngresaPasswordActionPerformed(evt);
@@ -193,6 +198,11 @@ public class Login extends javax.swing.JFrame {
     private void IngresaPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IngresaPasswordActionPerformed
+
+    private void IngresaPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresaPasswordMouseClicked
+        // TODO add your handling code here:
+        IngresaPassword.setText("");
+    }//GEN-LAST:event_IngresaPasswordMouseClicked
 
     /**
      * @param args the command line arguments

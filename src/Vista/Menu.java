@@ -52,6 +52,7 @@ public class Menu extends javax.swing.JFrame {
         BtAsistenicaMenu = new javax.swing.JButton();
         BtEliminarMenu = new javax.swing.JButton();
         BtPagos = new javax.swing.JToggleButton();
+        BtSalirMenu = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -123,7 +124,20 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        BtPagos.setText("jToggleButton1");
+        BtPagos.setText("df");
+
+        BtSalirMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48.png"))); // NOI18N
+        BtSalirMenu.setText("Salir");
+        BtSalirMenu.setBorder(null);
+        BtSalirMenu.setBorderPainted(false);
+        BtSalirMenu.setContentAreaFilled(false);
+        BtSalirMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48P.png"))); // NOI18N
+        BtSalirMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesProyecto/Salir48S.png"))); // NOI18N
+        BtSalirMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtSalirMenuMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,14 +151,19 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(MenuLb)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtModificarMenu)
-                            .addComponent(BtConsultaMenu))
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtPagos)
-                            .addComponent(BtEliminarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(BtSalirMenu)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(BtModificarMenu)
+                                .addComponent(BtConsultaMenu))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(70, 70, 70)
+                                    .addComponent(BtEliminarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BtPagos))))))
                 .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
@@ -162,7 +181,9 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(BtAsistenicaMenu)
                     .addComponent(BtConsultaMenu)
                     .addComponent(BtPagos))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addComponent(BtSalirMenu)
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -215,6 +236,11 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtModificarMenuMouseClicked
 
+    private void BtSalirMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtSalirMenuMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_BtSalirMenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -257,6 +283,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton BtModificarMenu;
     private javax.swing.JToggleButton BtPagos;
     private javax.swing.JButton BtRegistrarMenu;
+    private javax.swing.JButton BtSalirMenu;
     private javax.swing.JLabel MenuLb;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
