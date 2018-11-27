@@ -343,13 +343,16 @@ public class RegistroAlumno extends javax.swing.JFrame {
         int EdadA = Integer.parseInt(this.IngreEdadRA.getText());
         
         
-        //Creo un objeto fecha diseñado para poder ser pasado a la BD
+        //Creo un objeto fecha diseñado para poder ser pasado a la BD      
         Date Date = IngreFechaRA.getDate();
         long Fecha = Date.getTime();
         java.sql.Date FechaA = new java.sql.Date(Fecha);
+        
         ////////////////////////////////////////////////////////////////
+        
         Grupo NGrupoRA = new Grupo(ComboGrupoRA.getItemAt(ComboGrupoRA.getSelectedIndex()).getTipoDeGrupo(),ComboGrupoRA.getItemAt(ComboGrupoRA.getSelectedIndex()).getIDHorario(),ComboGrupoRA.getItemAt(ComboGrupoRA.getSelectedIndex()).getIDMaestro());
         Long TelefonoA = Long.parseLong(this.IngreTelefonoRA.getText());
+        
         ///////////////////Ingresar ruta de la foto /////////////////////////////
         
         File RutImageA = new File(RutaImagenRA.getText());
